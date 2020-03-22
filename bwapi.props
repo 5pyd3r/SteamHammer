@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <BWAPI_INCLUDE>D:\bw-bot\bwapi\bwapi\include</BWAPI_INCLUDE>
+    <BWAPI_LIB>D:\bw-bot\bwapi\bwapi\$(Configuration)</BWAPI_LIB>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(BWAPI_INCLUDE);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>bwapilib.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(BWAPI_LIB)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="BWAPI_INCLUDE">
+      <Value>$(BWAPI_INCLUDE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BWAPI_LIB">
+      <Value>$(BWAPI_LIB)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>
